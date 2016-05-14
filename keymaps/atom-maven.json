@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-.": "atom-maven:toggle"
+    "ctrl-alt-1": "atom-maven:toggle"
   }
 }

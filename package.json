@@ -8,11 +8,18 @@
   "activationCommands": {
     "atom-workspace": "atom-maven:toggle"
   },
-  "repository": "https://github.com/atom/atom-maven",
+  "repository": "https://github.com/concon121/atom-maven",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-  }
+    "atom-package-deps": "4.0.1",
+    "underscore": "1.8.3"
+  },
+  "package-deps": [
+    "autocomplete-java",
+    "linter",
+    "linter-javac"
+  ]
 }
