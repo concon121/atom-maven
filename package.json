@@ -3,8 +3,7 @@
   "main": "./lib/atom-maven",
   "version": "0.0.0",
   "description": "Maven integration for atom!",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "atom-maven:toggle"
   },
@@ -15,7 +14,8 @@
   },
   "dependencies": {
     "atom-package-deps": "4.0.1",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "unzip": "^0.1.11"
   },
   "package-deps": [
     "autocomplete-java",
