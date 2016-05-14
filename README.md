@@ -9,9 +9,10 @@ Generates a .classpath file based on your maven pom file.
   - [x] Attempt to get the localRepository from the user level settings defined in ${user.home}/.m2/settings.xml.
   - [x] Attempt to get the localRepository from the global settings defined in ${maven.home}/conf/settings.xml.
   - [x] If repo is not defined in settings.xml, use the default repository location ${user.home}/.m2/repository.
-- [x] Find every pom file in the working directory and configure the classpath for that module.
+- [ ] Find every pom file in the working directory and configure the classpath for that module.
   - [x] Read the <dependencies> in the pom file and match them to locations in the local maven repository.
   - [x] Output the locations of the dependencies to the module specific .classpath file.
+  - [ ] The autocomplete-java package requires class files to operate properly.  Unpack .jars to a module specific directory and put this directory on the classpath. This will probably replace the individual jars in the classpath, as javac will complain about duplicate objects.
 - [ ] Compute classpath for every module in the working directory when Atom starts up.
   - [ ] Remove toggle activation (ctrl + alt + 1) as it shouldn't be required.
 - [ ] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
