@@ -5,15 +5,21 @@ Maven integration for atom!
 Generates a .classpath file based on your maven pom file.
 
 ## Acceptance Criteria
-- [ ] Locate the maven repository by reading the settings.xml file in $M2_HOME 
-  - [ ] If $M2_HOME is not set, find maven on the $PATH.
-  - [ ] If repo is not defined in settings.xml, figure out the location of the default repo.
-- [ ] Find every pom file in the working directory
-  - [ ] Read the <dependencies> in the pom file and match them to locations in the local maven repository.
-  - [ ] Output the locations of the dependencies to the module specific .classpath file.
+- [x] Locate the maven repository by reading the settings.xml file. 
+  - [x] Attempt to get the localRepository from the user level settings defined in ${user.home}/.m2/settings.xml.
+  - [x] Attempt to get the localRepository from the global settings defined in ${maven.home}/conf/settings.xml.
+  - [x] If repo is not defined in settings.xml, use the default repository location ${user.home}/.m2/repository.
+- [x] Find every pom file in the working directory and configure the classpath for that module.
+  - [x] Read the <dependencies> in the pom file and match them to locations in the local maven repository.
+  - [x] Output the locations of the dependencies to the module specific .classpath file.
+- [ ] Compute classpath for every module in the working directory when Atom starts up.
+  - [ ] Remove toggle activation (ctrl + alt + 1) as it shouldn't be required.
 - [ ] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
-- [ ] (Desirable) build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
-- [ ] (Desirable) present a warning on screen if the user enters a maven dependency which does not exist or can not be resolved.
+  - [ ] When a pom file is saved, compute the classpath for that module only.
+  - [ ] Ensure that classpath is ONLY computed for pom file saves.
+- [ ] Build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
+- [ ] Present a warning on screen if the user enters a maven dependency which does not exist or can not be resolved.
+- [ ] Present a warning on screen if maven isn't on the PATH (and likely isn't installed).
 
 ## Atom Java EcoSystem
 
