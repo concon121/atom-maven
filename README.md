@@ -12,7 +12,7 @@ Generates a .classpath file based on your maven pom file.
   - [ ] Read the <dependencies> in the pom file and match them to locations in the local maven repository.
   - [ ] Output the locations of the dependencies to the module specific .classpath file.
 - [ ] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
-- [ ] (Desirable) build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
+- [ ] Build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
 - [ ] (Desirable) present a warning on screen if the user enters a maven dependency which does not exist or can not be resolved.
 
 ## Atom Java EcoSystem
