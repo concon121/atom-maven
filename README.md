@@ -42,7 +42,6 @@ My quest is to be able to use Atom as a light weight Java IDE, to compliment how
 * [ex-mode](https://atom.io/packages/ex-mode)
 * [atom-terminal-panel](https://atom.io/packages/atom-terminal-panel)
 * [atom-maven](https://github.com/concon121/atom-maven)
-* [browser-plus](https://atom.io/packages/browser-plus)
 * [atom-beautify](https://atom.io/packages/atom-beautify)
 
 
@@ -65,9 +64,6 @@ Who needs a GUI? This package gives you a terminal within atom which defaults to
 
 ### atom-maven
 Sets up your Java .classpath file based on your maven pom file.
-
-### browser-plus
-Gives you a browser in one of your atom tabs! This allows me to quickly preview changes to my html, css and javascript without having to leave atom.
 
 ### atom-beautify
 Configure this plugin to conform to your code formatting standards and it will correct your formatting mistakes every time your save.
