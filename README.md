@@ -19,7 +19,11 @@ Generates a .classpath file based on your maven pom file.
   - [x] Ensure that classpath is ONLY computed for pom file saves.
 - [ ] Build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
 - [ ] Present a warning on screen if the user enters a maven dependency which does not exist or can not be resolved.
+  - [x] Log warning to the console.
+  - [ ] Display warning on the UI.
 - [ ] Present a warning on screen if maven isn't on the PATH (and likely isn't installed).
+  - [x] Log warning to the console.
+  - [ ] Display warning on the UI.
 
 ## Atom Java EcoSystem
 
