@@ -3,16 +3,22 @@
   "main": "./lib/atom-maven",
   "version": "0.0.0",
   "description": "Maven integration for atom!",
-  "keywords": [
-  ],
-  "activationCommands": {
-    "atom-workspace": "atom-maven:toggle"
-  },
-  "repository": "https://github.com/atom/atom-maven",
+  "keywords": [],
+  "repository": "https://github.com/concon121/atom-maven",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-  }
+    "atom-message-panel": "^1.2.4",
+    "atom-package-deps": "4.0.1",
+    "jquery": "^2.2.3",
+    "lodash": "3.10.1",
+    "unzip": "^0.1.11"
+  },
+  "package-deps": [
+    "autocomplete-java",
+    "linter",
+    "linter-javac"
+  ]
 }
