@@ -11,6 +11,8 @@ Generates a .classpath file based on your maven pom file.
 - Capable of detecting when your pom.xml files change and updating your classpath accordingly.
 - On screen warning messages when you enter maven dependencies which do not exist or can not be resolved in your local repo.
 
+![atom-maven](https://cloud.githubusercontent.com/assets/12021575/15276879/4429112e-1aec-11e6-8bbe-c24901b3ee17.JPG)
+
 ## To be used with
 
 * [autocomplete-java](https://atom.io/packages/autocomplete-java)
