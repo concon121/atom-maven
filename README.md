@@ -14,9 +14,9 @@ Generates a .classpath file based on your maven pom file.
   - [x] Output the locations of the dependencies to the module specific .classpath file.
 - [x] Compute classpath for every module in the working directory when Atom starts up.
   - [x] Remove toggle activation (ctrl + alt + 1) as it shouldn't be required.
-- [ ] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
-  - [ ] When a pom file is saved, compute the classpath for that module only.
-  - [ ] Ensure that classpath is ONLY computed for pom file saves.
+- [x] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
+  - [x] When a pom file is saved, compute the classpath for that module only.
+  - [x] Ensure that classpath is ONLY computed for pom file saves.
 - [ ] Build the maven project when the pom changes, to ensure that any new dependencies are present in the local repository.
 - [ ] Present a warning on screen if the user enters a maven dependency which does not exist or can not be resolved.
 - [ ] Present a warning on screen if maven isn't on the PATH (and likely isn't installed).
