@@ -10,6 +10,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "atom-message-panel": "^1.2.4",
     "atom-package-deps": "4.0.1",
     "jquery": "^2.2.3",
     "lodash": "3.10.1",
