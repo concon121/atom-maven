@@ -4,9 +4,6 @@
   "version": "0.0.0",
   "description": "Maven integration for atom!",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "atom-maven:toggle"
-  },
   "repository": "https://github.com/concon121/atom-maven",
   "license": "MIT",
   "engines": {
@@ -14,7 +11,8 @@
   },
   "dependencies": {
     "atom-package-deps": "4.0.1",
-    "underscore": "1.8.3",
+    "jquery": "^2.2.3",
+    "lodash": "3.10.1",
     "unzip": "^0.1.11"
   },
   "package-deps": [
