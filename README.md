@@ -5,15 +5,15 @@ Maven integration for atom!
 Generates a .classpath file based on your maven pom file.
 
 ## Acceptance Criteria
-- [x] Locate the maven repository by reading the settings.xml file. 
+- [x] Locate the maven repository by reading the settings.xml file.
   - [x] Attempt to get the localRepository from the user level settings defined in ${user.home}/.m2/settings.xml.
   - [x] Attempt to get the localRepository from the global settings defined in ${maven.home}/conf/settings.xml.
   - [x] If repo is not defined in settings.xml, use the default repository location ${user.home}/.m2/repository.
 - [x] Find every pom file in the working directory and configure the classpath for that module.
   - [x] Read the <dependencies> in the pom file and match them to locations in the local maven repository.
   - [x] Output the locations of the dependencies to the module specific .classpath file.
-- [ ] Compute classpath for every module in the working directory when Atom starts up.
-  - [ ] Remove toggle activation (ctrl + alt + 1) as it shouldn't be required.
+- [x] Compute classpath for every module in the working directory when Atom starts up.
+  - [x] Remove toggle activation (ctrl + alt + 1) as it shouldn't be required.
 - [ ] Be able to detect when the maven pom file changes and update the .classpath file to reflect these changes.
   - [ ] When a pom file is saved, compute the classpath for that module only.
   - [ ] Ensure that classpath is ONLY computed for pom file saves.
