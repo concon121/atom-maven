@@ -1,7 +1,7 @@
 {
   "name": "atom-maven",
   "main": "./lib/atom-maven",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Maven integration for atom!",
   "keywords": [],
   "repository": "https://github.com/concon121/atom-maven",
