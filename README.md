@@ -6,7 +6,7 @@ Generates a .classpath file based on your maven pom file.
 
 ## Features
 - Automatically discovers your Maven settings.xml and locates your local repository.
-- When the package starts up, it find every pom file in the working directory and configures the classpath for that module based on the dependencies in your pom.xml.
+- When the package starts up, it will find every pom file in the working directory and configure the classpath for that module based on the dependencies in your pom.xml.
 - Java classpath is configured via a module specific .classpath file.
 - Capable of detecting when your pom.xml files change and updating your classpath accordingly.
 - On screen warning messages when you enter maven dependencies which do not exist or can not be resolved in your local repo.
