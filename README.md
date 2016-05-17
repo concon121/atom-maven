@@ -10,8 +10,8 @@ Generates a .classpath file based on your maven pom file.
 - Java classpath is configured via a module specific .classpath file.
 - Capable of detecting when your pom files change and updating your classpath accordingly.
 - On screen warning messages when you enter maven dependencies which do not exist or can not be resolved in your local repo.
-- Resolves version numbers dependency management and recursively searches <parent>.
-- Resolves property placeholders from user defined <properties> and recursively searches <parent>.
+- Resolves version numbers from your dependency management and recursively searches &lt;parent&gt;.
+- Resolves property placeholders from user defined &lt;properties&gt; and recursively searches &lt;parent&gt;.
 
 ## To Do
 - Parental dependencies should be identified and added to the classpath.
