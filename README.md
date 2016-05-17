@@ -6,10 +6,17 @@ Generates a .classpath file based on your maven pom file.
 
 ## Features
 - Automatically discovers your Maven settings and locates your local repository.
-- ~~When the package starts up, it will find every pom file in the working directory and configure the classpath for that module based on the dependencies in your pom.~~ Currently only generates the classpath when you save your pom files. Putting this one on my backlog.
+- When the package starts up, it will find every pom file in the working directory and configure the classpath for that module based on the dependencies in your pom.
 - Java classpath is configured via a module specific .classpath file.
 - Capable of detecting when your pom files change and updating your classpath accordingly.
 - On screen warning messages when you enter maven dependencies which do not exist or can not be resolved in your local repo.
+- Resolves version numbers dependency management and recursively searches <parent>.
+- Resolves property placeholders from user defined <properties> and recursively searches <parent>.
+
+## To Do
+- Parental dependencies should be identified and added to the classpath.
+- Transitive dependencies should be identified and added to the classpath.
+- If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
 
 ![atom-maven](https://cloud.githubusercontent.com/assets/12021575/15276879/4429112e-1aec-11e6-8bbe-c24901b3ee17.JPG)
 
