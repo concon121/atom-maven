@@ -14,8 +14,11 @@ Generates a .classpath file based on your maven pom file.
 - Recursively searches &lt;parent&gt; to resolve property placeholders from user defined &lt;properties&gt;.
 - Dependencies defined in parents of your pom files are identified and added to the classpath.
 
-## To Do
+## In Progress
 - Transitive dependencies should be identified and added to the classpath.
+- Prefer versions defined in project and exclude others.
+
+## To Do
 - If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
 - Present an on screen warning for duplicate dependency definitions.
 - When a parent pom changes, determine if those changes break their children.
