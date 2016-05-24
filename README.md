@@ -13,16 +13,20 @@ Generates a .classpath file based on your maven pom file.
 - Recursively searches &lt;parent&gt; to resolve version numbers from your &lt;dependencyManagement&gt;.
 - Recursively searches &lt;parent&gt; to resolve property placeholders from user defined &lt;properties&gt;.
 - Dependencies defined in parents of your pom files are identified and added to the classpath.
+- Transitive dependencies are identified and added to the classpath.
 
 ## In Progress
-- Transitive dependencies should be identified and added to the classpath.
-- Prefer versions defined in project and exclude others.
+- Implement [dependency mediation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies) for transitive dependencies.
 
 ## To Do
 - If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
 - Present an on screen warning for duplicate dependency definitions.
 - When a parent pom changes, determine if those changes break their children.
 - Identify when a new pom file is added into the workspace and bind the change event to it.
+
+## Known Issues
+- Dependency mediation hasn't yet been implemented, so you may find you have the wrong versions of dependencies on your classpath.  
+
 
 ![atom-maven](https://cloud.githubusercontent.com/assets/12021575/15276879/4429112e-1aec-11e6-8bbe-c24901b3ee17.JPG)
 
