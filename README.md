@@ -15,20 +15,27 @@ Generates a .classpath file based on your maven pom file.
 - Dependencies defined in parents of your pom files are identified and added to the classpath.
 - Transitive dependencies are identified and added to the classpath.
 
+![atom-maven](https://cloud.githubusercontent.com/assets/12021575/15276879/4429112e-1aec-11e6-8bbe-c24901b3ee17.JPG)
+
 ## In Progress
 - Implement [dependency mediation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies) for transitive dependencies.
 
 ## To Do
 - If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
 - Present an on screen warning for duplicate dependency definitions.
-- When a parent pom changes, determine if those changes break their children.
+- When a parent pom changes, notify the parents children and re-render the ui errors (if any).
+- When a dependency changes, notify its dependants and re-render the ui errors (if any).
 - Identify when a new pom file is added into the workspace and bind the change event to it.
+- Support for system scoped dependencies.
+- Support for import scoped dependencies.
+- Support for dependency exclusions.
+- Support for optional dependencies.
 
 ## Known Issues
 - Dependency mediation hasn't yet been implemented, so you may find you have the wrong versions of dependencies on your classpath.  
 
-
-![atom-maven](https://cloud.githubusercontent.com/assets/12021575/15276879/4429112e-1aec-11e6-8bbe-c24901b3ee17.JPG)
+## Backlog and Issues
+The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the GitHub repository [here](https://github.com/concon121/atom-maven/issues).
 
 ## To be used with
 
