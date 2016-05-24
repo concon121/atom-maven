@@ -33,11 +33,17 @@ Generates a .classpath file based on your maven pom file.
 
 ## Known Issues
 - Dependency mediation hasn't yet been implemented, so you may find you have the wrong versions of dependencies on your classpath.  
+- "Unclosed root tag" error message in the console.  An intermittent problem which is being caused because another package I'm using to format my files on save is modifying the file as atom-maven is trying to read from it. 
 
 ## Backlog and Issues
 The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the GitHub repository [here](https://github.com/concon121/atom-maven/issues).
 
+## Contributing
+Contributions are always welcome, there is still a lot of work to be done!  Feel free to pick up an issue in the backlog and open a pull request to get the conversation going.  I am more than happy to provide help and direction, and very welcoming of advice and suggestions.
+
 ## To be used with
+
+There are a few plugins out there which can use the .classpath file atom-maven generates.
 
 * [autocomplete-java](https://atom.io/packages/autocomplete-java)
 * [linter-javac](https://atom.io/packages/linter-javac)
