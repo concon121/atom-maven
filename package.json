@@ -1,19 +1,18 @@
 {
-  "name": "atom-maven",
-  "main": "./lib/atom-maven",
-  "version": "0.11.0",
-  "description": "Maven integration for atom!",
-  "keywords": [],
-  "repository": "https://github.com/concon121/atom-maven",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "dependencies": {
-    "atom-message-panel": "^1.2.4",
-    "jquery": "^2.2.3",
-    "nodeutil": "^0.1.0",
-    "underscore": "^1.8.3",
-    "xml2js": "^0.4.16"
-  }
+    "name": "atom-maven",
+    "main": "./lib/atom-maven",
+    "version": "0.11.0",
+    "description": "Maven integration for atom!",
+    "keywords": [],
+    "repository": "https://github.com/concon121/atom-maven",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {
+        "atom-message-panel": "^1.2.4",
+        "jquery": "^2.2.3",
+        "underscore": "^1.8.3",
+        "xml2js": "^0.4.16"
+    }
 }
