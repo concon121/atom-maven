@@ -1,5 +1,11 @@
 # atom-maven package
 
+[![Dependency Status](https://david-dm.org/concon121/atom-maven.svg)](https://david-dm.org/concon121/atom-maven)
+[![Code Climate](https://codeclimate.com/github/concon121/atom-maven/badges/gpa.svg)](https://codeclimate.com/github/concon121/atom-maven)
+[![Test Coverage](https://codeclimate.com/github/concon121/atom-maven/badges/coverage.svg)](https://codeclimate.com/github/concon121/atom-maven/coverage)
+[![Issue Count](https://codeclimate.com/github/concon121/atom-maven/badges/issue_count.svg)](https://codeclimate.com/github/concon121/atom-maven)
+[![Downloads](https://img.shields.io/apm/dm/atom-maven.svg?maxAge=2592000)](https://atom.io/packages/atom-maven)
+
 Maven integration for atom!
 
 Generates a .classpath file based on your maven pom file.
