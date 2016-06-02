@@ -1,6 +1,5 @@
 const mvn = require('../lib/maven-utils');
 const common = require('../lib/common');
-const mocks = require('./setup-mocks');
 
 describe('When finding the location of the maven settings file.', () => {
 
