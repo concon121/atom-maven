@@ -1,0 +1,15 @@
+language: objective-c
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+addons:
+    code_climate:
+        repo_token: 77eb7af12cbe33c0d4519a17e7ab7e1f202957a5
+
+env:
+  - APM_TEST_PACKAGES="jquery underscore xml2js atom-message-panel"
+
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
