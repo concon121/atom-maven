@@ -13,3 +13,6 @@ env:
   - APM_TEST_PACKAGES="jquery underscore xml2js atom-message-panel"
 
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+
+after_script:
+  - codeclimate-test-reporter < lcov.info
