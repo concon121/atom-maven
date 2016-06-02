@@ -5,12 +5,12 @@ notifications:
     on_success: never
     on_failure: change
 
+env:
+  - APM_TEST_PACKAGES="jquery underscore xml2js atom-message-panel codeclimate-test-reporter"
+
 addons:
     code_climate:
         repo_token: 77eb7af12cbe33c0d4519a17e7ab7e1f202957a5
-
-env:
-  - APM_TEST_PACKAGES="jquery underscore xml2js atom-message-panel"
 
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
 
