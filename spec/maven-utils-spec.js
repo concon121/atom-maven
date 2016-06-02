@@ -2,13 +2,12 @@ const mvn = require('../lib/maven-utils');
 const common = require('../lib/common');
 const fs = common.fileSeparator;
 const ps = common.pathSeparator;
+const pathPrefix = (common.isWin) ? 'C:' + fs : fs;
 
 describe('When finding the location of the maven settings file.', () => {
 
-	var pathPrefix = (common.isWin) ? 'C:' + fs : fs;
-
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn('C:' + fs + 'tools' + fs + 'apache-maven');
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 	});
 
 	it('should correctly resolve the maven settings.xml location when the path contains only the maven home url.', () => {
@@ -20,8 +19,8 @@ describe('When finding the location of the maven settings file.', () => {
 
 	it('should correctly resolve the maven settings.xml location when the path contains more than 1 entry.', () => {
 		var path = pathPrefix + 'tools' + fs + 'random' + fs + 'bin' + ps +
-			'C:' + fs + 'tools' + fs + 'apache-maven' + fs + 'bin' + ps +
-			'C:' + fs + 'tools' + fs + 'other-random' + fs + 'bin' + ps;
+			pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin' + ps +
+			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps;
 		var actualSettings = mvn.getMavenGlobalSettings(path);
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
@@ -93,7 +92,7 @@ describe('When finding the location of the maven settings file.', () => {
 describe('When maven-utils detects that maven has not been installed correctly.', () => {
 
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn('C:' + fs + 'tools' + fs + 'apache-maven');
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 	});
 
 	it('should set the flag "mavenIsInstalled" to false, to indicate that it should not try to load pom files.', () => {
@@ -107,11 +106,11 @@ describe('When maven-utils detects that maven has not been installed correctly.'
 describe('When maven-utils detects that maven has been found and installed correctly.', () => {
 
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn('C:' + fs + 'tools' + fs + 'apache-maven');
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 	});
 
 	it('should set the flag "mavenIsInstalled" to true, to indicate that it should load the pom files in the workspace.', () => {
-		var path = 'M2';
+		var path = pathPrefix + 'M2';
 		mvn.getMavenGlobalSettings(path);
 		expect(mvn.mavenIsInstalled).toEqual(true);
 	});
