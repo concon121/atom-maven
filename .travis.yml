@@ -1,14 +1,16 @@
 language: objective-c
 
+before_install:
+    - npm install -g istanbul
+
 notifications:
   email:
     on_success: never
     on_failure: change
 
-env:
-  - APM_TEST_PACKAGES="jquery underscore xml2js atom-message-panel codeclimate-test-reporter"
-
-script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+script:
+    - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+    - npm test
 
 after_script:
-  - codeclimate-test-reporter < lcov.info
+  - codeclimate-test-reporter < coverage/lcov.info

@@ -1,5 +1,9 @@
+'use babel';
+'use strict';
+
 const mvn = require('../lib/maven-utils');
 const common = require('../lib/common');
+const ui = require('../lib/ui-utils');
 const fs = common.fileSeparator;
 const ps = common.pathSeparator;
 const pathPrefix = (common.isWin) ? 'C:' + fs : fs;
@@ -8,6 +12,7 @@ describe('When finding the location of the maven settings file.', () => {
 
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
+		spyOn(ui, 'warning');
 	});
 
 	it('should correctly resolve the maven settings.xml location when the path contains only the maven home url.', () => {
@@ -93,6 +98,7 @@ describe('When maven-utils detects that maven has not been installed correctly.'
 
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
+		spyOn(ui, 'warning');
 	});
 
 	it('should set the flag "mavenIsInstalled" to false, to indicate that it should not try to load pom files.', () => {
