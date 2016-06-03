@@ -91,5 +91,7 @@
     "esversion": 6,
 
     // Custom Globals
-    "globals": {} // additional predefined global variables
+    "globals": {
+        "atom": true
+    } // additional predefined global variables
 }
