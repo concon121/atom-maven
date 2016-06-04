@@ -1,4 +1,3 @@
----
 engines:
   duplication:
     enabled: true
@@ -14,11 +13,5 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**/**.inc"
-  - "**/**.js"
-  - "**/**.jsx"
-  - "**/**.module"
-  - "**/**.php"
-  - "**/**.py"
-  - "**/**.rb"
+  - "lib/*.js"
 exclude_paths: []

@@ -1,12 +1,13 @@
-'use babel';
 'use strict';
 
-const mvn = require('../lib/maven-utils');
-const common = require('../lib/common');
-const ui = require('../lib/ui-utils');
-const fs = common.fileSeparator;
-const ps = common.pathSeparator;
-const pathPrefix = (common.isWin) ? 'C:' + fs : fs;
+// require("babel-register");
+
+var mvn = require('../lib/maven-utils');
+var common = require('../lib/common');
+var ui = require('../lib/ui-utils');
+var fs = common.fileSeparator;
+var ps = common.pathSeparator;
+var pathPrefix = (common.isWin) ? 'C:' + fs : fs;
 
 describe('When finding the location of the maven settings file.', function () {
 
