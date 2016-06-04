@@ -16,6 +16,7 @@
   "dependencies": {
     "atom-message-panel": "^1.2.4",
     "jquery": "^2.2.3",
+    "log4js": "^0.6.36",
     "underscore": "^1.8.3",
     "xml2js": "^0.4.16"
   },
