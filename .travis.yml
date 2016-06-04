@@ -3,6 +3,11 @@ language: objective-c
 before_install:
     - npm install -g istanbul
     - npm install -g jshint
+    - npm install -g codeclimate-test-reporter
+
+env:
+    - COVERAGE=true
+    - COVERAGE=false
 
 notifications:
   email:
@@ -13,9 +18,13 @@ script:
     - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
     - npm run quality
 
-after_success:
-    env: COVERAGE=true
-
 after_script:
   - npm run coverage
   - codeclimate-test-reporter < coverage/lcov.info
+
+matrix:
+    exclude:
+        - env: COVERAGE=true
+          script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+        - env: COVERAGE=true
+          script: npm run quality
