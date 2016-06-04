@@ -2,6 +2,7 @@
 
 if [ $COVERAGE == true ]
 then
+    npm install
     npm run coverage
     codeclimate-test-reporter < coverage/lcov.info
 else
