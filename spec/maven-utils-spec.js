@@ -1,6 +1,9 @@
 'use strict';
+'use babel';
 
-// require("babel-register");
+if (process.env.COVERAGE) {
+	require('babel-register');
+}
 
 var mvn = require('../lib/maven-utils');
 var common = require('../lib/common');
@@ -10,7 +13,6 @@ var ps = common.pathSeparator;
 var pathPrefix = (common.isWin) ? 'C:' + fs : fs;
 
 describe('When finding the location of the maven settings file.', function () {
-
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 		spyOn(ui, 'warning');
@@ -96,7 +98,6 @@ describe('When finding the location of the maven settings file.', function () {
 });
 
 describe('When maven-utils detects that maven has not been installed correctly.', function () {
-
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 		spyOn(ui, 'warning');
@@ -109,9 +110,7 @@ describe('When maven-utils detects that maven has not been installed correctly.'
 	});
 });
 
-
 describe('When maven-utils detects that maven has been found and installed correctly.', function () {
-
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 	});
@@ -121,5 +120,4 @@ describe('When maven-utils detects that maven has been found and installed corre
 		mvn.getMavenGlobalSettings(path);
 		expect(mvn.mavenIsInstalled).toEqual(true);
 	});
-
 });
