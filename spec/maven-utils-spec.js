@@ -1,7 +1,7 @@
 'use strict';
 'use babel';
 
-if (process.env.COVERAGE) {
+if (process.env.COVERAGE.indexOf('true') >= 0) {
 	require('babel-register');
 }
 
