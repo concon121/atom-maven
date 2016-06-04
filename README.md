@@ -26,9 +26,7 @@ Generates a .classpath file based on your maven pom file.
 ![310516](https://cloud.githubusercontent.com/assets/12021575/15692408/12018824-2786-11e6-8cac-289fd0af4076.JPG)
 
 ## In Progress
-- Bug Fix: Resolve Maven installation directory from M2, M2_HOME, etc environment variables if it can not be found on the PATH.
-- Bug Fix: Stop atom-maven if Maven is not installed.
-
+- Work on technical debt.
 
 ## To Do
 - If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
