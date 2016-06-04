@@ -3,7 +3,7 @@
     "main": "./lib/atom-maven",
     "version": "0.12.0",
     "description": "Maven integration for atom!",
-    "keywords": [],
+    "keywords": ["apache", "maven", "java"],
     "repository": "https://github.com/concon121/atom-maven",
     "license": "MIT",
     "engines": {

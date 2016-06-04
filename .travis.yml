@@ -10,7 +10,10 @@ notifications:
 
 script:
     - 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
-    - npm test
+    - npm run quality
+    env:
+        - COVERAGE=true
+    - npm run coverage
 
 after_script:
   - codeclimate-test-reporter < coverage/lcov.info
