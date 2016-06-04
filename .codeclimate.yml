@@ -1,17 +1,19 @@
+---
 engines:
   duplication:
-    enabled: true
     config:
       languages:
-      - ruby
-      - javascript
-      - python
-      - php
+        - javascript
+    enabled: true
   eslint:
     enabled: true
   fixme:
     enabled: true
+exclude_paths:
+  - spec/**/**
+  - atom/**/**
+  - node_modules/**/**
+  - coverage/**/**
 ratings:
   paths:
-  - "lib/*.js"
-exclude_paths: []
+    - lib/**
