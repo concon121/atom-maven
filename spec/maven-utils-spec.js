@@ -5,6 +5,24 @@ if (process.env.COVERAGE.indexOf('true') >= 0) {
 	require('babel-register');
 }
 
+// in spec_runner.js
+global.initDOM = function () {
+
+	var jsdom = require('jsdom');
+	var jQuery = require('jquery');
+	global.jQuery = global.$ = jQuery;
+
+	global.window = jsdom.jsdom().defaultView;
+	//global.document = window.document;
+	require('html-element');
+	global.addEventListener = window.addEventListener
+}
+
+// GLOBAL.window = GLOBAL;
+// GLOBAL.document = GLOBAL;
+
+initDOM();
+
 var mvn = require('../lib/maven-utils');
 var common = require('../lib/common');
 var ui = require('../lib/ui-utils');
@@ -113,6 +131,7 @@ describe('When maven-utils detects that maven has not been installed correctly.'
 describe('When maven-utils detects that maven has been found and installed correctly.', function () {
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
+		spyOn(ui, 'warning');
 	});
 
 	it('should set the flag "mavenIsInstalled" to true, to indicate that it should load the pom files in the workspace.', function () {
