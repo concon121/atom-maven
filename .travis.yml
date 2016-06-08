@@ -2,6 +2,7 @@ language: objective-c
 
 before_install:
     - npm install -g istanbul
+    - npm install -g jasmine-focused
     - npm install -g jshint
     - npm install -g codeclimate-test-reporter
 

@@ -5,24 +5,6 @@ if (process.env.COVERAGE.indexOf('true') >= 0) {
 	require('babel-register');
 }
 
-// in spec_runner.js
-global.initDOM = function () {
-
-	var jsdom = require('jsdom');
-	var jQuery = require('jquery');
-	global.jQuery = global.$ = jQuery;
-
-	global.window = jsdom.jsdom().defaultView;
-	//global.document = window.document;
-	require('html-element');
-	global.addEventListener = window.addEventListener
-}
-
-// GLOBAL.window = GLOBAL;
-// GLOBAL.document = GLOBAL;
-
-initDOM();
-
 var mvn = require('../lib/maven-utils');
 var common = require('../lib/common');
 var ui = require('../lib/ui-utils');
@@ -32,13 +14,21 @@ var pathPrefix = (common.isWin) ? 'C:' + fs : fs;
 
 describe('When finding the location of the maven settings file.', function () {
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
+		spyOn(mvn, 'getAtomMavenConfig').andReturn('');
 		spyOn(ui, 'warning');
+		global.atom = {
+			config: {
+				get: function () {
+					return '';
+				}
+			}
+		};
 	});
 
 	it('should correctly resolve the maven settings.xml location when the path contains only the maven home url.', function () {
 		var path = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -47,7 +37,8 @@ describe('When finding the location of the maven settings file.', function () {
 		var path = pathPrefix + 'tools' + fs + 'random' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -57,14 +48,17 @@ describe('When finding the location of the maven settings file.', function () {
 			pathPrefix + 'tools' + fs + 'apache-maven-correct' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'apache-maven-incorrect' + fs + 'bin' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven-correct' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
 
 	it('should correctly resolve the maven settings.xml location when the maven home directory is an environment variable.', function () {
 		var path = pathPrefix + 'M2_HOME' + fs + 'bin';
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -73,7 +67,9 @@ describe('When finding the location of the maven settings file.', function () {
 		var path = pathPrefix + 'tools' + fs + 'random' + fs + 'bin' + ps +
 			pathPrefix + 'M2_HOME' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -83,14 +79,18 @@ describe('When finding the location of the maven settings file.', function () {
 			pathPrefix + 'M2_HOME' + fs + 'bin' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps +
 			pathPrefix + 'M2_HOME' + fs + 'bin' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
 
 	it('should resolve the maven settings location if the first maven entry on the classpath does not contain maven binaries', function () {
 		var path = pathPrefix + 'M2';
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -99,7 +99,9 @@ describe('When finding the location of the maven settings file.', function () {
 		var path = pathPrefix + 'tools' + fs + 'random' + fs + 'bin' + ps +
 			pathPrefix + 'M2' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
 		expect(actualSettings).toEqual(expectedSettings);
 	});
@@ -109,12 +111,15 @@ describe('When finding the location of the maven settings file.', function () {
 			pathPrefix + 'M2' + ps +
 			pathPrefix + 'tools' + fs + 'other-random' + fs + 'bin' + ps +
 			pathPrefix + 'M2' + ps;
-		var actualSettings = mvn.getMavenGlobalSettings(path);
+		var mvnHome = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'bin';
 		var expectedSettings = pathPrefix + 'tools' + fs + 'apache-maven' + fs + 'conf' + fs + 'settings.xml';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(mvnHome);
+		var actualSettings = mvn.getMavenGlobalSettings();
 		expect(actualSettings).toEqual(expectedSettings);
 	});
 });
 
+/*
 describe('When maven-utils detects that maven has not been installed correctly.', function () {
 	beforeEach(function () {
 		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
@@ -140,3 +145,4 @@ describe('When maven-utils detects that maven has been found and installed corre
 		expect(mvn.mavenIsInstalled).toEqual(true);
 	});
 });
+*/
