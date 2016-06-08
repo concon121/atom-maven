@@ -35,7 +35,6 @@
         "quality": "jshint lib/atom-maven.js lib/common.js lib/file-utils.js lib/maven-utils.js lib/pom-factory.js lib/pom-registry.js lib/pom.js lib/ui-utils.js lib/workspace.js"
     },
     "standard": {
-        "parser": "babel-eslint",
         "globals": [
             "atom",
             "it",

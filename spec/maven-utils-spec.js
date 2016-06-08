@@ -173,7 +173,41 @@ describe('When the user configures the Maven Home directory through atom-maven c
 				get: function () {
 					return {
 						mavenHome: mvnHome
-					}
+					};
+				}
+			}
+		};
+		spyOn(common, 'resolveEnvironmentVariable').andReturn('');
+		var actual = mvn.getMavenGlobalSettings();
+		expect(actual).toEqual(expected);
+	});
+
+	it('should return the configuration directory for the user defined maven home directory, even if the bin directory is not included', function () {
+		var base = pathPrefix + 'tools' + fs + 'apache-maven';
+		var expected = base + fs + 'conf' + fs + 'settings.xml';
+		global.atom = {
+			config: {
+				get: function () {
+					return {
+						mavenHome: base
+					};
+				}
+			}
+		};
+		spyOn(common, 'resolveEnvironmentVariable').andReturn('');
+		var actual = mvn.getMavenGlobalSettings();
+		expect(actual).toEqual(expected);
+	});
+
+	it('should return the configuration directory for the user defined maven home directory, using example from issue 43', function () {
+		var base = pathPrefix + 'usr' + fs + 'local' + fs + 'Cellar' + fs + 'maven' + fs + 'VERSION' + fs + 'libexec' + fs + 'bin' + fs;
+		var expected = base + fs + 'conf' + fs + 'settings.xml';
+		global.atom = {
+			config: {
+				get: function () {
+					return {
+						mavenHome: base
+					};
 				}
 			}
 		};
