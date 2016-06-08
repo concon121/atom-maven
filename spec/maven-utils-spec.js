@@ -119,15 +119,21 @@ describe('When finding the location of the maven settings file.', function () {
 	});
 });
 
-/*
 describe('When maven-utils detects that maven has not been installed correctly.', function () {
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 		spyOn(ui, 'warning');
+		global.atom = {
+			config: {
+				get: function () {
+					return '';
+				}
+			}
+		};
 	});
 
 	it('should set the flag "mavenIsInstalled" to false, to indicate that it should not try to load pom files.', function () {
 		var path = '';
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path);
 		mvn.getMavenGlobalSettings(path);
 		expect(mvn.mavenIsInstalled).toEqual(false);
 	});
@@ -135,14 +141,44 @@ describe('When maven-utils detects that maven has not been installed correctly.'
 
 describe('When maven-utils detects that maven has been found and installed correctly.', function () {
 	beforeEach(function () {
-		spyOn(common, 'resolveEnvironmentVariable').andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
 		spyOn(ui, 'warning');
+		global.atom = {
+			config: {
+				get: function () {
+					return '';
+				}
+			}
+		};
 	});
 
 	it('should set the flag "mavenIsInstalled" to true, to indicate that it should load the pom files in the workspace.', function () {
 		var path = pathPrefix + 'M2';
-		mvn.getMavenGlobalSettings(path);
+		spyOn(common, 'resolveEnvironmentVariable').andReturn(path).andReturn(pathPrefix + 'tools' + fs + 'apache-maven');
+		mvn.getMavenGlobalSettings();
 		expect(mvn.mavenIsInstalled).toEqual(true);
 	});
 });
-*/
+
+describe('When the user configures the Maven Home directory through atom-maven configuration', function () {
+	beforeEach(function () {
+		spyOn(ui, 'warning');
+	});
+
+	it('should return the configuration directory for the user defined maven home directory', function () {
+		var base = pathPrefix + 'tools' + fs + 'apache-maven';
+		var mvnHome = base + fs + 'bin';
+		var expected = base + fs + 'conf' + fs + 'settings.xml';
+		global.atom = {
+			config: {
+				get: function () {
+					return {
+						mavenHome: mvnHome
+					}
+				}
+			}
+		};
+		spyOn(common, 'resolveEnvironmentVariable').andReturn('');
+		var actual = mvn.getMavenGlobalSettings();
+		expect(actual).toEqual(expected);
+	});
+});
