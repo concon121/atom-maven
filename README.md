@@ -13,6 +13,7 @@ Generates a .classpath file based on your maven pom file.
 
 ## Features
 - Automatically discovers your Maven settings and locates your local repository.
+- Allows the user to manually configure their maven installation.
 - When the package starts up, it will find every pom file in the working directory and configure the classpath for that module based on the dependencies in your pom.
 - Java classpath is configured via a module specific .classpath file.
 - Capable of detecting when your pom files change and updating your classpath accordingly.
@@ -26,25 +27,20 @@ Generates a .classpath file based on your maven pom file.
 ![310516](https://cloud.githubusercontent.com/assets/12021575/15692408/12018824-2786-11e6-8cac-289fd0af4076.JPG)
 
 ## In Progress
-- Work on technical debt.
+- Support for dependency exclusions.
 
 ## To Do
 - If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
 - Present an on screen warning for duplicate dependency definitions.
-- When a parent pom changes, notify the parents children and re-render the ui errors (if any).
-- When a dependency changes, notify its dependants and re-render the ui errors (if any).
 - Identify when a new pom file is added into the workspace and bind the change event to it.
 - Support for system scoped dependencies.
 - Support for import scoped dependencies.
-- Support for dependency exclusions.
 - Support for optional dependencies.
 - Support for properties defined in the users settings.xml file.
 
 ## Known Issues
 - "Unclosed root tag" error message in the console.  An intermittent problem which is being caused because another package I'm using to format my files on save is modifying the file as atom-maven is trying to read from it.  This seems to only happen when I add comments to my pom files.
 - The message panel is a little bit jumpy while atom-maven is loading the classpath.
-- Maven installation is not found if it has been put on the PATH under another environment variable e.g. export PATH = $PATH:$M2_HOME.
-- If Maven installation is not found, atom-maven still tries to load the poms and resolve the classpath.  This is an issue as it will likely attempt to read files which dont exist.
 
 ## Configuration  
 
@@ -74,7 +70,7 @@ Contributions are always welcome, there is still a lot of work to be done!  Feel
 
 ## Raising Issues
 
-- If atom-maven is not resolving your classpath correctly, it is really useful for debugging purposes if you could provide sample pom files which I can use to reproduce your issue.
+If atom-maven is not resolving your classpath correctly, it is really useful for debugging purposes if you could provide sample pom files which I can use to reproduce your issue.
 
 ## What can I use atom-maven for?
 
