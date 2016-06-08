@@ -1,5 +1,12 @@
 # Change Log
 
+## [v0.13.2](https://github.com/concon121/atom-maven/tree/v0.13.2) (2016-06-08)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.1...v0.13.2)
+
+**Fixed bugs:**
+
+- Error messages disapear even though the errors havent been resolved. [\#45](https://github.com/concon121/atom-maven/issues/45)
+
 ## [v0.13.1](https://github.com/concon121/atom-maven/tree/v0.13.1) (2016-06-08)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.0...v0.13.1)
 
