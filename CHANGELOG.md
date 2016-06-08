@@ -1,8 +1,10 @@
 # Change Log
 
-## [Unreleased](https://github.com/concon121/atom-maven/tree/HEAD)
+## [v0.13.1](https://github.com/concon121/atom-maven/tree/v0.13.1) (2016-06-08)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.0...v0.13.1)
 
-[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.12.1...HEAD)
+## [v0.13.0](https://github.com/concon121/atom-maven/tree/v0.13.0) (2016-06-08)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.12.1...v0.13.0)
 
 **Implemented enhancements:**
 
@@ -12,6 +14,10 @@
 
 - Uncaught TypeError: Cannot read property '0' of undefined [\#36](https://github.com/concon121/atom-maven/issues/36)
 - Cannot find module './FileUtils' [\#11](https://github.com/concon121/atom-maven/issues/11)
+
+**Merged pull requests:**
+
+- Develop [\#44](https://github.com/concon121/atom-maven/pull/44) ([concon121](https://github.com/concon121))
 
 ## [v0.12.1](https://github.com/concon121/atom-maven/tree/v0.12.1) (2016-06-04)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.12.0...v0.12.1)
