@@ -46,11 +46,35 @@ Generates a .classpath file based on your maven pom file.
 - Maven installation is not found if it has been put on the PATH under another environment variable e.g. export PATH = $PATH:$M2_HOME.
 - If Maven installation is not found, atom-maven still tries to load the poms and resolve the classpath.  This is an issue as it will likely attempt to read files which dont exist.
 
+## Configuration  
+
+### Maven Home
+
+A number of uses have commented on the fact that their Maven set up does not rely on the use on environment variables, and putting the Maven bin directory on the PATH.  This means that atom-maven can not automatically discover the location of your Maven installation.
+
+The Maven Home configuration item is an optional override for the automatic discovery of your Maven installation.
+
+#### Examples
+
+```
+/tools/apache-maven/version/bin
+```
+```
+C:\ProgramFiles\apache\maven\bin
+```
+```
+/usr/local/Cellar/maven/VERSION/libexec/bin/
+```
+
 ## Backlog and Issues
 The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the GitHub repository [here](https://github.com/concon121/atom-maven/issues).
 
 ## Contributing
 Contributions are always welcome, there is still a lot of work to be done!  Feel free to pick up an issue in the backlog and open a pull request to get the conversation going.  I am more than happy to provide help and direction, and very welcoming of advice and suggestions.
+
+## Raising Issues
+
+- If atom-maven is not resolving your classpath correctly, it is really useful for debugging purposes if you could provide sample pom files which I can use to reproduce your issue.
 
 ## What can I use atom-maven for?
 

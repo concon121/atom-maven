@@ -6,6 +6,6 @@ then
     npm run coverage
     codeclimate-test-reporter < coverage/lcov.info
 else
-    curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh
+    jasmine-focused spec
     npm run quality
 fi
