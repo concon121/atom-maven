@@ -1,7 +1,7 @@
 {
   "name": "atom-maven",
   "main": "./lib/atom-maven",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "Maven integration for atom!",
   "keywords": [
     "apache",
