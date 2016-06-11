@@ -1,5 +1,20 @@
 # Change Log
 
+## [v0.13.3](https://github.com/concon121/atom-maven/tree/v0.13.3) (2016-06-11)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.2...v0.13.3)
+
+**Implemented enhancements:**
+
+- Update to jquery 3 [\#48](https://github.com/concon121/atom-maven/issues/48)
+
+**Fixed bugs:**
+
+- Dependency mediation not working correctly [\#46](https://github.com/concon121/atom-maven/issues/46)
+
+**Closed issues:**
+
+- Uncaught ReferenceError: $ is not defined [\#47](https://github.com/concon121/atom-maven/issues/47)
+
 ## [v0.13.2](https://github.com/concon121/atom-maven/tree/v0.13.2) (2016-06-08)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.1...v0.13.2)
 
