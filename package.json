@@ -1,7 +1,7 @@
 {
   "name": "atom-maven",
   "main": "./lib/atom-maven",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "description": "Maven integration for atom!",
   "keywords": [
     "apache",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "atom-message-panel": "^1.2.4",
-    "jquery": "^2.2.3",
+    "jquery": "^3.0.0",
     "underscore": "^1.8.3",
     "xml2js": "^0.4.16"
   },
