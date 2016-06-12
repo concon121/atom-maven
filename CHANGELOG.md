@@ -1,5 +1,22 @@
 # Change Log
 
+## [v0.14.0](https://github.com/concon121/atom-maven/tree/v0.14.0) (2016-06-12)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.3...v0.14.0)
+
+**Implemented enhancements:**
+
+- Support for optional dependencies [\#33](https://github.com/concon121/atom-maven/issues/33)
+
+**Fixed bugs:**
+
+- Possible failure when finding line number in pom for unkown dependency [\#50](https://github.com/concon121/atom-maven/issues/50)
+
+**Merged pull requests:**
+
+- Hotfix/tech debt [\#54](https://github.com/concon121/atom-maven/pull/54) ([concon121](https://github.com/concon121))
+- Feature/optional dependencies [\#53](https://github.com/concon121/atom-maven/pull/53) ([concon121](https://github.com/concon121))
+- Hotfix/issue47 [\#52](https://github.com/concon121/atom-maven/pull/52) ([concon121](https://github.com/concon121))
+
 ## [v0.13.3](https://github.com/concon121/atom-maven/tree/v0.13.3) (2016-06-11)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.2...v0.13.3)
 
@@ -10,10 +27,6 @@
 **Fixed bugs:**
 
 - Dependency mediation not working correctly [\#46](https://github.com/concon121/atom-maven/issues/46)
-
-**Closed issues:**
-
-- Uncaught ReferenceError: $ is not defined [\#47](https://github.com/concon121/atom-maven/issues/47)
 
 ## [v0.13.2](https://github.com/concon121/atom-maven/tree/v0.13.2) (2016-06-08)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.1...v0.13.2)
