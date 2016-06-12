@@ -1,11 +1,13 @@
 #!/bin/bash
 
+npm install
+
 if [ $COVERAGE == true ]
 then
-    npm install
     npm run coverage
     codeclimate-test-reporter < coverage/lcov.info
+    codacy-coverage < coverage/lcov.info
 else
-    jasmine-focused spec
+    npm test
     npm run quality
 fi
