@@ -2,41 +2,45 @@
 
 [![Build Status](https://api.travis-ci.org/concon121/atom-maven.png)](https://api.travis-ci.org/concon121/atom-maven)
 [![Dependency Status](https://david-dm.org/concon121/atom-maven.svg)](https://david-dm.org/concon121/atom-maven)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b9b60c42152461a9ec4e29d84848b01)](https://www.codacy.com/app/connor-bray/atom-maven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=concon121/atom-maven&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/concon121/atom-maven/badges/gpa.svg)](https://codeclimate.com/github/concon121/atom-maven)
-[![Test Coverage](https://codeclimate.com/github/concon121/atom-maven/badges/coverage.svg)](https://codeclimate.com/github/concon121/atom-maven/coverage)
 [![Issue Count](https://codeclimate.com/github/concon121/atom-maven/badges/issue_count.svg)](https://codeclimate.com/github/concon121/atom-maven)
+[![Test Coverage](https://codeclimate.com/github/concon121/atom-maven/badges/coverage.svg)](https://codeclimate.com/github/concon121/atom-maven/coverage)
 [![Downloads](https://img.shields.io/apm/dm/atom-maven.svg?maxAge=2592000)](https://atom.io/packages/atom-maven)
 
 Maven integration for atom!
 
-Generates a .classpath file based on your maven pom file.
+Generates module specific .classpath files based on the Maven pom files in your Atom workspace.
 
 ## Features
-- Automatically discovers your Maven settings and locates your local repository.
-- Allows the user to manually configure their maven installation.
-- When the package starts up, it will find every pom file in the working directory and configure the classpath for that module based on the dependencies in your pom.
-- Java classpath is configured via a module specific .classpath file.
-- Capable of detecting when your pom files change and updating your classpath accordingly.
-- On screen warning messages when you enter maven dependencies which do not exist or can not be resolved in your local repo.
-- Capable of resolving dependency information from dependency management structures within the parental hierarchy.
-- Capable of resolving property placeholders from properties defined within the parental hierarchy, and getting the value of properties defined as environment variables.
-- Dependencies defined within the parental hierarchy of your pom files are identified and added to the classpath.
-- Transitive dependencies are identified and added to the classpath.
-- Implemented [dependency mediation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies) to ensure that the dependency versions you specify in your pom files take precedence over dependency versions being inherited transitively.
+
+| Feature | Status |
+| :------ | :-----: |
+| Automatic discovery of your maven installation and settings. | :white_check_mark: |
+| Optional manual configuration of your maven installation. | :white_check_mark: |
+| Configures the classpath for every Maven module in your workspace. | :white_check_mark: |
+| Automatically update the classpath when you update your pom files. | :white_check_mark: |
+| Reads Maven properties. | :white_check_mark: |
+| Reads Maven properties referencing environment variables. | :white_check_mark: |
+| Reads Maven properties referencing Java properties. | :x: |
+| Reads Maven properties defined in the Maven settings file. | :x: |
+| Uses Maven properties to resolve property placeholders for Maven versions. | :white_check_mark: |
+| Traverses up the parental hierarchy to resolve versions from dependency management. | :white_check_mark: |
+| Support for dependency exclusions. | :o: |
+| Support for system scoped dependencies. | :x: |
+| Support for import scoped dependencies. | :x: |
+| Support for optional dependencies. | :white_check_mark: |
+| Support for transitive dependencies. | :white_check_mark: |
+| Implementation of [dependency mediation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies) to resolve conflicting versions. | :white_check_mark: |
+| Build the Maven projects in the workspace. | :x: |
+| Notification when your classpath has been configured. | :white_check_mark: |
+| Notification when a duplicate dependency definition has been identified. | :x: |
+| Notification when a dependency does not exist. | :white_check_mark: |
+| Identify when a new pom file is added into the workspace and bind the change event to it. | :x: |
+
 
 ![310516](https://cloud.githubusercontent.com/assets/12021575/15692408/12018824-2786-11e6-8cac-289fd0af4076.JPG)
 
-## In Progress
-- Support for dependency exclusions.
-
-## To Do
-- If a dependency is identified as not existing in the local repository, then use maven to build the project so an attempt is made to download the dependency from the remote repository before showing the user that there is an error.
-- Present an on screen warning for duplicate dependency definitions.
-- Identify when a new pom file is added into the workspace and bind the change event to it.
-- Support for system scoped dependencies.
-- Support for import scoped dependencies.
-- Support for optional dependencies.
-- Support for properties defined in the users settings.xml file.
 
 ## Known Issues
 - "Unclosed root tag" error message in the console.  An intermittent problem which is being caused because another package I'm using to format my files on save is modifying the file as atom-maven is trying to read from it.  This seems to only happen when I add comments to my pom files.
