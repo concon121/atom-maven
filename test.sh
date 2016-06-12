@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npm install
+
 if [ $COVERAGE == true ]
 then
     npm run coverage
