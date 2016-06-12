@@ -10,7 +10,7 @@
 
 Maven integration for atom!
 
-Generates .classpath files based on the Maven pom files in your Atom workspace.
+Generates module specific .classpath files based on the Maven pom files in your Atom workspace.
 
 ## Features
 
