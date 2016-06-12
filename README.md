@@ -3,6 +3,7 @@
 [![Build Status](https://api.travis-ci.org/concon121/atom-maven.png)](https://api.travis-ci.org/concon121/atom-maven)
 [![Dependency Status](https://david-dm.org/concon121/atom-maven.svg)](https://david-dm.org/concon121/atom-maven)
 [![Code Climate](https://codeclimate.com/github/concon121/atom-maven/badges/gpa.svg)](https://codeclimate.com/github/concon121/atom-maven)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b9b60c42152461a9ec4e29d84848b01)](https://www.codacy.com/app/connor-bray/atom-maven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=concon121/atom-maven&amp;utm_campaign=Badge_Grade)
 [![Test Coverage](https://codeclimate.com/github/concon121/atom-maven/badges/coverage.svg)](https://codeclimate.com/github/concon121/atom-maven/coverage)
 [![Issue Count](https://codeclimate.com/github/concon121/atom-maven/badges/issue_count.svg)](https://codeclimate.com/github/concon121/atom-maven)
 [![Downloads](https://img.shields.io/apm/dm/atom-maven.svg?maxAge=2592000)](https://atom.io/packages/atom-maven)
