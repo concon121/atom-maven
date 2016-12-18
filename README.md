@@ -16,26 +16,14 @@ Generates module specific .classpath files based on the Maven pom files in your 
 
 | Feature | Status |
 | :------ | :-----: |
-| Automatic discovery of your maven installation and settings. | :white_check_mark: |
-| Optional manual configuration of your maven installation. | :white_check_mark: |
 | Configures the classpath for every Maven module in your workspace. | :white_check_mark: |
 | Automatically update the classpath when you update your pom files. | :white_check_mark: |
-| Reads Maven properties. | :white_check_mark: |
-| Reads Maven properties referencing environment variables. | :white_check_mark: |
-| Reads Maven properties referencing Java properties. | :x: |
-| Reads Maven properties defined in the Maven settings file. | :x: |
-| Uses Maven properties to resolve property placeholders for Maven versions. | :white_check_mark: |
-| Traverses up the parental hierarchy to resolve versions from dependency management. | :white_check_mark: |
-| Support for dependency exclusions. | :o: |
-| Support for system scoped dependencies. | :x: |
-| Support for import scoped dependencies. | :x: |
-| Support for optional dependencies. | :white_check_mark: |
-| Support for transitive dependencies. | :white_check_mark: |
-| Implementation of [dependency mediation](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies) to resolve conflicting versions. | :white_check_mark: |
-| Build the Maven projects in the workspace. | :x: |
+| Build the Maven projects in the workspace on save. | :white_check_mark: |
+| Build the Maven project via user interaction with the UI. | :x: |
 | Notification when your classpath has been configured. | :white_check_mark: |
 | Notification when a duplicate dependency definition has been identified. | :x: |
 | Notification when a dependency does not exist. | :white_check_mark: |
+| Link to the location of erroneous dependencies. | :o: |
 | Identify when a new pom file is added into the workspace and bind the change event to it. | :x: |
 
 
@@ -43,28 +31,17 @@ Generates module specific .classpath files based on the Maven pom files in your 
 
 
 ## Known Issues
-- "Unclosed root tag" error message in the console.  An intermittent problem which is being caused because another package I'm using to format my files on save is modifying the file as atom-maven is trying to read from it.  This seems to only happen when I add comments to my pom files.
-- The message panel is a little bit jumpy while atom-maven is loading the classpath.
+- The notification which informs you that a dependency doesn't exist always points to line 0.
 
 ## Configuration  
+Due to the changes I've made for V2, no configuration is required for this plugin.  It relies on the fact that you have configured Maven correctly on your own system and piggybacks on top of that.
 
-### Maven Home
+## What's new in V2
+Writing this package has been a huge learning experience for me, its basically my first major javascript / node js project and as such I made it unnecessarily complicated the first time round.
 
-A number of uses have commented on the fact that their Maven set up does not rely on the use on environment variables, and putting the Maven bin directory on the PATH.  This means that atom-maven can not automatically discover the location of your Maven installation.
+At the core of V2, the major change that has been made is that I'm no longer trying to write an api to replicate what Maven does, but rather I actually use Maven!  Obviously this means I've deleted a lot of code, improved the code quality immensely and gotten a lot of the features I wanted to write completely for free.
 
-The Maven Home configuration item is an optional override for the automatic discovery of your Maven installation.
-
-#### Examples
-
-```
-/tools/apache-maven/version/bin
-```
-```
-C:\ProgramFiles\apache\maven\bin
-```
-```
-/usr/local/Cellar/maven/VERSION/libexec/bin/
-```
+That being said, this project still has a handful of features I still want to implement so stay tuned!     
 
 ## Backlog and Issues
 The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the GitHub repository [here](https://github.com/concon121/atom-maven/issues).
