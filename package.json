@@ -1,50 +1,49 @@
 {
-  "name": "atom-maven",
-  "main": "./lib/atom-maven",
-  "version": "1.0.0",
-  "description": "Maven integration for atom!",
-  "keywords": [
-    "apache",
-    "maven",
-    "java"
-  ],
-  "repository": "https://github.com/concon121/atom-maven",
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "dependencies": {
-    "atom-message-panel": "^1.2.4",
-    "jquery": "^3.0.0",
-    "node-maven-api": "^1.1.0",
-    "underscore": "^1.8.3",
-    "xml2js": "^0.4.16"
-  },
-  "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.9.0",
-    "babel-core": "^6.3.17",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-register": "^6.9.0",
-    "codeclimate-test-reporter": "^0.3.1",
-    "happiness": "^6.0.7",
-    "istanbul": "^1.0.0-alpha.2",
-    "jasmine-focused": "^1.0.7",
-    "jshint": "^2.9.2"
-  },
-  "scripts": {
-    "test": "node ./node_modules/jasmine-focused/bin/jasmine-focused spec",
-    "coverage": "node ./node_modules/istanbul/lib/cli.js cover -v --include-all-sources -x **/atom/** node_modules/jasmine-focused/bin/jasmine-focused -R spec",
-    "quality": "node ./node_modules/jshint/bin/jshint lib/atom-maven.js lib/common.js lib/file-utils.js lib/maven-utils.js lib/pom-factory.js lib/pom-registry.js lib/pom.js lib/ui-utils.js lib/workspace.js"
-  },
-  "standard": {
-    "globals": [
-      "atom",
-      "it",
-      "spyOn",
-      "describe",
-      "expect",
-      "beforeEach"
-    ]
-  }
+    "name": "atom-maven",
+    "main": "./lib/atom-maven",
+    "version": "1.0.0",
+    "description": "Maven integration for atom!",
+    "keywords": [
+        "apache",
+        "maven",
+        "java"
+    ],
+    "repository": "https://github.com/concon121/atom-maven",
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "dependencies": {
+        "atom-message-panel": "^1.2.4",
+        "jquery": "^3.0.0",
+        "node-maven-api": "^1.1.0",
+        "xml2js": "^0.4.16"
+    },
+    "devDependencies": {
+        "babel": "^6.5.2",
+        "babel-cli": "^6.9.0",
+        "babel-core": "^6.3.17",
+        "babel-preset-es2015": "^6.3.13",
+        "babel-register": "^6.9.0",
+        "codeclimate-test-reporter": "^0.3.1",
+        "happiness": "^6.0.7",
+        "istanbul": "^1.0.0-alpha.2",
+        "jasmine-focused": "^1.0.7",
+        "jshint": "^2.9.2"
+    },
+    "scripts": {
+        "test": "node ./node_modules/jasmine-focused/bin/jasmine-focused spec",
+        "coverage": "node ./node_modules/istanbul/lib/cli.js cover -v --include-all-sources -x **/atom/** node_modules/jasmine-focused/bin/jasmine-focused -R spec",
+        "quality": "node ./node_modules/jshint/bin/jshint lib/atom-maven.js lib/common.js lib/file-utils.js lib/maven-utils.js lib/pom-factory.js lib/pom-registry.js lib/pom.js lib/ui-utils.js lib/workspace.js"
+    },
+    "standard": {
+        "globals": [
+            "atom",
+            "it",
+            "spyOn",
+            "describe",
+            "expect",
+            "beforeEach"
+        ]
+    }
 }

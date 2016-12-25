@@ -34,17 +34,17 @@ Generates module specific .classpath files based on the Maven pom files in your 
 - The notification which informs you that a dependency doesn't exist always points to line 0.
 
 ## Configuration  
-Due to the changes I've made for V2, no configuration is required for this plugin.  It relies on the fact that you have configured Maven correctly on your own system and piggybacks on top of that.
+Currently no configuration is required for this package.  Please ensure that Apache Maven is correctly installed on your computer and is ready to use on the command line.
 
-## What's new in V2
-Writing this package has been a huge learning experience for me, its basically my first major javascript / node js project and as such I made it unnecessarily complicated the first time round.
+Please see the Maven website for [installation instructions](http://maven.apache.org/install.html).
 
-At the core of V2, the major change that has been made is that I'm no longer trying to write an api to replicate what Maven does, but rather I actually use Maven!  Obviously this means I've deleted a lot of code, improved the code quality immensely and gotten a lot of the features I wanted to write completely for free.
+## What's new in version 1.0.0
+The atom-maven package is a lot lazier in the new release, relying on your Maven installation to do all the hard work, rather than trying to replicate everything that Maven does.  In doing this, a lot of the features I wanted to implement I got for free.  
 
-That being said, this project still has a handful of features I still want to implement so stay tuned!     
+Checkout the [changelog](https://github.com/concon121/atom-maven/blob/master/CHANGELOG.md) for the full list of recently implemented features and bug fixes.
 
 ## Backlog and Issues
-The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the GitHub repository [here](https://github.com/concon121/atom-maven/issues).
+The complete list of features which needs to be implemented, future enhancements, known issues and bugs can be found on the atom-maven GitHub repository [issues page](https://github.com/concon121/atom-maven/issues).
 
 ## Contributing
 Contributions are always welcome, there is still a lot of work to be done!  Feel free to pick up an issue in the backlog and open a pull request to get the conversation going.  I am more than happy to provide help and direction, and very welcoming of advice and suggestions.
@@ -73,5 +73,6 @@ Capable of reading the generated .classpath file, this package will attempt to c
 ## Kudos
 Kudos to the following, for making my life easier!
 
+* [node-maven-api](https://www.npmjs.com/package/node-maven-api)
 * [atom-message-panel](https://github.com/tcarlsen/atom-message-panel)
 * [xml2js](https://github.com/Leonidas-from-XIV/node-xml2js)
