@@ -1,7 +1,6 @@
 # atom-maven package
 
 [![Build Status](https://api.travis-ci.org/concon121/atom-maven.png)](https://api.travis-ci.org/concon121/atom-maven)
-[![Dependency Status](https://david-dm.org/concon121/atom-maven.svg)](https://david-dm.org/concon121/atom-maven)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b9b60c42152461a9ec4e29d84848b01)](https://www.codacy.com/app/connor-bray/atom-maven?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=concon121/atom-maven&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/concon121/atom-maven/badges/gpa.svg)](https://codeclimate.com/github/concon121/atom-maven)
 [![Issue Count](https://codeclimate.com/github/concon121/atom-maven/badges/issue_count.svg)](https://codeclimate.com/github/concon121/atom-maven)
@@ -34,13 +33,16 @@ Generates module specific .classpath files based on the Maven pom files in your 
 - The notification which informs you that a dependency doesn't exist always points to line 0.
 
 ## Configuration  
-Currently no configuration is required for this package.  Please ensure that Apache Maven is correctly installed on your computer and is ready to use on the command line.
+It is required that Apache Maven is correctly installed on your computer and is ready to use on the command line.
 
 Please see the Maven website for [installation instructions](http://maven.apache.org/install.html).
 
-## What's new in version 1.0.0
-The atom-maven package is a lot lazier in the new release, relying on your Maven installation to do all the hard work, rather than trying to replicate everything that Maven does.  In doing this, a lot of the features I wanted to implement I got for free.  
+| Configuration Key | Required / Optional | Description |
+| :------: | :-----: | :-----: |
+| classpathFileName | Optional | The name of the file to write your classpath to in your Maven module. |
 
+
+## What's new?
 Checkout the [changelog](https://github.com/concon121/atom-maven/blob/master/CHANGELOG.md) for the full list of recently implemented features and bug fixes.
 
 ## Backlog and Issues
