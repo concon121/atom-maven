@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.1.0](https://github.com/concon121/atom-maven/tree/v1.1.0) (2017-01-21)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v1.0.1...v1.1.0)
+
+**Merged pull requests:**
+
+- Added support for configurable classpath file. [\#71](https://github.com/concon121/atom-maven/pull/71) ([concon121](https://github.com/concon121))
+
 ## [v1.0.1](https://github.com/concon121/atom-maven/tree/v1.0.1) (2016-12-25)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v1.0.0...v1.0.1)
 
@@ -12,11 +19,6 @@
 
 - Codacy: Expected to return a value at the end of this function [\#65](https://github.com/concon121/atom-maven/issues/65)
 - Codacy: Expected return with callback function [\#64](https://github.com/concon121/atom-maven/issues/64)
-- Codacy: Expected error to be handled [\#63](https://github.com/concon121/atom-maven/issues/63)
-
-**Closed issues:**
-
-- Doesn't seem to do anything [\#61](https://github.com/concon121/atom-maven/issues/61)
 
 **Merged pull requests:**
 
@@ -28,19 +30,23 @@
 **Implemented enhancements:**
 
 - feature/nodeMavenApi build maven project [\#58](https://github.com/concon121/atom-maven/issues/58)
+- feature/nodeMavenApi watch pom files for changes [\#57](https://github.com/concon121/atom-maven/issues/57)
 - feature/nodeMavenApi Migrate to node-maven-api [\#55](https://github.com/concon121/atom-maven/issues/55)
 - Support for dependency exclusions [\#32](https://github.com/concon121/atom-maven/issues/32)
-- Support for import scoped dependencies [\#31](https://github.com/concon121/atom-maven/issues/31)
 - Support for system scoped dependencies [\#30](https://github.com/concon121/atom-maven/issues/30)
 - Notify dependants when dependency changes [\#27](https://github.com/concon121/atom-maven/issues/27)
-- Notify children when parent pom changes [\#24](https://github.com/concon121/atom-maven/issues/24)
+- Download from remote repository [\#4](https://github.com/concon121/atom-maven/issues/4)
 
 **Fixed bugs:**
 
 - feature/nodeMavenApi bug [\#56](https://github.com/concon121/atom-maven/issues/56)
-- Uncaught ReferenceError: $ is not defined [\#47](https://github.com/concon121/atom-maven/issues/47)
 - Uncaught TypeError: Cannot read property 'pomPath' of undefined [\#42](https://github.com/concon121/atom-maven/issues/42)
+- "Jumpy" message panel [\#38](https://github.com/concon121/atom-maven/issues/38)
 - Unclosed root tag [\#35](https://github.com/concon121/atom-maven/issues/35)
+
+**Merged pull requests:**
+
+- Feature/nodeMavenApi [\#62](https://github.com/concon121/atom-maven/pull/62) ([concon121](https://github.com/concon121))
 
 ## [v0.14.0](https://github.com/concon121/atom-maven/tree/v0.14.0) (2016-06-12)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.3...v0.14.0)
@@ -48,10 +54,6 @@
 **Implemented enhancements:**
 
 - Support for optional dependencies [\#33](https://github.com/concon121/atom-maven/issues/33)
-
-**Fixed bugs:**
-
-- Possible failure when finding line number in pom for unkown dependency [\#50](https://github.com/concon121/atom-maven/issues/50)
 
 **Merged pull requests:**
 
@@ -62,9 +64,9 @@
 ## [v0.13.3](https://github.com/concon121/atom-maven/tree/v0.13.3) (2016-06-11)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.2...v0.13.3)
 
-**Fixed bugs:**
+**Implemented enhancements:**
 
-- Dependency mediation not working correctly [\#46](https://github.com/concon121/atom-maven/issues/46)
+- Update to jquery 3 [\#48](https://github.com/concon121/atom-maven/issues/48)
 
 ## [v0.13.2](https://github.com/concon121/atom-maven/tree/v0.13.2) (2016-06-08)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.13.1...v0.13.2)
@@ -83,20 +85,8 @@
 
 - atom-maven expects $PATH to contain the string 'maven' or 'M2' or 'M3' [\#43](https://github.com/concon121/atom-maven/issues/43)
 
-**Fixed bugs:**
-
-- Uncaught TypeError: Cannot read property '0' of undefined [\#36](https://github.com/concon121/atom-maven/issues/36)
-
-**Merged pull requests:**
-
-- Develop [\#44](https://github.com/concon121/atom-maven/pull/44) ([concon121](https://github.com/concon121))
-
 ## [v0.12.1](https://github.com/concon121/atom-maven/tree/v0.12.1) (2016-06-04)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.12.0...v0.12.1)
-
-**Merged pull requests:**
-
-- Hotfix/find maven installation [\#41](https://github.com/concon121/atom-maven/pull/41) ([concon121](https://github.com/concon121))
 
 ## [v0.12.0](https://github.com/concon121/atom-maven/tree/v0.12.0) (2016-05-31)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.11.0...v0.12.0)
@@ -105,16 +95,11 @@
 
 - Implement Dependency Mediation [\#28](https://github.com/concon121/atom-maven/issues/28)
 
-**Fixed bugs:**
-
-- Wrong versions in the classpath [\#29](https://github.com/concon121/atom-maven/issues/29)
-
 ## [v0.11.0](https://github.com/concon121/atom-maven/tree/v0.11.0) (2016-05-24)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.10.1...v0.11.0)
 
 **Fixed bugs:**
 
-- Dependencies not refreshed on save [\#34](https://github.com/concon121/atom-maven/issues/34)
 - on save, getting cached versions of files which have changed [\#19](https://github.com/concon121/atom-maven/issues/19)
 
 ## [v0.10.1](https://github.com/concon121/atom-maven/tree/v0.10.1) (2016-05-23)
@@ -136,8 +121,8 @@
 **Closed issues:**
 
 - remove waitfor [\#21](https://github.com/concon121/atom-maven/issues/21)
-- define jquery in ui utils [\#18](https://github.com/concon121/atom-maven/issues/18)
 - Resolving version from dep management wrong [\#17](https://github.com/concon121/atom-maven/issues/17)
+- Parents dependencies should be on the classpath [\#14](https://github.com/concon121/atom-maven/issues/14)
 
 ## [v0.7.0](https://github.com/concon121/atom-maven/tree/v0.7.0) (2016-05-17)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.6.0...v0.7.0)
@@ -145,9 +130,14 @@
 **Closed issues:**
 
 - Versions defined as properties [\#9](https://github.com/concon121/atom-maven/issues/9)
+- Inherited versions [\#8](https://github.com/concon121/atom-maven/issues/8)
 
 ## [v0.6.0](https://github.com/concon121/atom-maven/tree/v0.6.0) (2016-05-16)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.5.0...v0.6.0)
+
+**Closed issues:**
+
+- Clear errors on every scan [\#3](https://github.com/concon121/atom-maven/issues/3)
 
 ## [v0.5.0](https://github.com/concon121/atom-maven/tree/v0.5.0) (2016-05-16)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v0.4.0...v0.5.0)
