@@ -1,5 +1,16 @@
 # Change Log
 
+## [v1.2.1](https://github.com/concon121/atom-maven/tree/v1.2.1) (2017-04-16)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v1.2.0...v1.2.1)
+
+**Fixed bugs:**
+
+- Building the classpath fails if the path has spaces in it [\#73](https://github.com/concon121/atom-maven/issues/73)
+
+**Merged pull requests:**
+
+- Updated dependency for node-maven-api to fix issue \#73 [\#81](https://github.com/concon121/atom-maven/pull/81) ([concon121](https://github.com/concon121))
+
 ## [v1.2.0](https://github.com/concon121/atom-maven/tree/v1.2.0) (2017-04-15)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v1.1.0...v1.2.0)
 
