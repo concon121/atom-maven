@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "atom-message-panel": "^1.2.4",
-    "event-kit": "^2.1.0",
     "jquery": "^3.0.0",
     "node-maven-api": "^2.0.2",
     "node-watch": "^0.5.2",
