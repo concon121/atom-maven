@@ -27,6 +27,16 @@ Generates module specific .classpath files based on the Maven pom files in your 
 
 ![310516](https://cloud.githubusercontent.com/assets/12021575/15692408/12018824-2786-11e6-8cac-289fd0af4076.JPG)
 
+### Using the UI Features
+There are two method of using atom-maven from the UI; from the Packages menu, and from the command palette.
+
+#### Packages menu
+
+![packages-menu](https://cloud.githubusercontent.com/assets/12021575/25781403/bba6e132-3331-11e7-9596-b6bd74812bd9.PNG)
+
+#### Command Palette
+
+![command-palette](https://cloud.githubusercontent.com/assets/12021575/25781396/ab10a45c-3331-11e7-8131-06fcd1f0c132.PNG)
 
 ## Known Issues
 - The notification which informs you that a dependency doesn't exist always points to line 0.
