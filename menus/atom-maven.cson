@@ -1,0 +1,26 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Atom Maven'
+      'submenu': [
+        {
+          'label': 'mvn clean'
+          'command': 'atom-maven:clean'
+        },
+        {
+          'label': 'mvn install'
+          'command': 'atom-maven:install'
+        },
+        {
+          'label': 'mvn test'
+          'command': 'atom-maven:test'
+        },
+        {
+          'label': 'mvn effective-pom'
+          'command': 'atom-maven:effectivePom'
+        }
+      ]
+    ]
+  }
+]
