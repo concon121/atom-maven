@@ -1,5 +1,25 @@
 # Change Log
 
+## [v1.3.0](https://github.com/concon121/atom-maven/tree/v1.3.0) (2017-05-07)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v1.2.1...v1.3.0)
+
+**Implemented enhancements:**
+
+- feature/nodeMavenApi build from the ui [\#60](https://github.com/concon121/atom-maven/issues/60)
+
+**Fixed bugs:**
+
+- Failed to load the atom-maven package [\#75](https://github.com/concon121/atom-maven/issues/75)
+- Uncaught Error: ENOENT: no such file or directory, open '~/Workspace/... [\#74](https://github.com/concon121/atom-maven/issues/74)
+
+**Closed issues:**
+
+- atom-maven won't start when i open atom from the terminal [\#84](https://github.com/concon121/atom-maven/issues/84)
+
+**Merged pull requests:**
+
+- feature/buildFromUi [\#85](https://github.com/concon121/atom-maven/pull/85) ([concon121](https://github.com/concon121))
+
 ## [v1.2.1](https://github.com/concon121/atom-maven/tree/v1.2.1) (2017-04-16)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v1.2.0...v1.2.1)
 
