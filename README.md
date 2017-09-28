@@ -49,7 +49,8 @@ Please see the Maven website for [installation instructions](http://maven.apache
 | Configuration Key | Required / Optional | Description |
 | :------: | :-----: | :-----: |
 | classpathFileName | Optional | The name of the file to write your classpath to in your Maven module. |
-
+| generateClasspathsOnStartup | Optional | Build all maven pom files on Atom start up and create classpaths for each. |
+| generateClasspathsOnSave | Optional | Watch maven pom files for save events and create classpath when the pom changes. |
 
 ## What's new?
 Checkout the [changelog](https://github.com/concon121/atom-maven/blob/master/CHANGELOG.md) for the full list of recently implemented features and bug fixes.
