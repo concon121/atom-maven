@@ -1,5 +1,23 @@
 # Change Log
 
+## [v1.3.1](https://github.com/concon121/atom-maven/tree/v1.3.1) (2017-09-28)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v1.3.0...v1.3.1)
+
+**Implemented enhancements:**
+
+- Add config to toggle creating classpath on save [\#97](https://github.com/concon121/atom-maven/issues/97)
+- Add config to toggle creating classpath on startup [\#96](https://github.com/concon121/atom-maven/issues/96)
+
+**Fixed bugs:**
+
+- Uncaught Error: watch ~/projects/aries/cdi/cdi-extender/ ENOSPC [\#95](https://github.com/concon121/atom-maven/issues/95)
+- Uncaught Error: watch ~/projects/aries/cdi/ ENOSPC [\#94](https://github.com/concon121/atom-maven/issues/94)
+- Uncaught Error: ENOENT: no such file or directory, open '~/Projects/nginx/plugins/packer/tmp/ecli... [\#90](https://github.com/concon121/atom-maven/issues/90)
+
+**Closed issues:**
+
+- Uncaught Error: ENOENT: no such file or directory [\#91](https://github.com/concon121/atom-maven/issues/91)
+
 ## [v1.3.0](https://github.com/concon121/atom-maven/tree/v1.3.0) (2017-05-07)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v1.2.1...v1.3.0)
 
