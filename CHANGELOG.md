@@ -1,5 +1,18 @@
 # Change Log
 
+## [v1.3.2](https://github.com/concon121/atom-maven/tree/v1.3.2) (2017-10-08)
+[Full Changelog](https://github.com/concon121/atom-maven/compare/v1.3.1...v1.3.2)
+
+**Closed issues:**
+
+- effectivePom function needs to pass an output file name [\#100](https://github.com/concon121/atom-maven/issues/100)
+- Menu option "mvn effective-pom" not working [\#98](https://github.com/concon121/atom-maven/issues/98)
+
+**Merged pull requests:**
+
+- Pass name of effective pom [\#101](https://github.com/concon121/atom-maven/pull/101) ([thadc23](https://github.com/thadc23))
+- fixing a typo in the command name [\#99](https://github.com/concon121/atom-maven/pull/99) ([thadc23](https://github.com/thadc23))
+
 ## [v1.3.1](https://github.com/concon121/atom-maven/tree/v1.3.1) (2017-09-28)
 [Full Changelog](https://github.com/concon121/atom-maven/compare/v1.3.0...v1.3.1)
 
